@@ -1,0 +1,43 @@
+# ROADMAP — Progetto Zodiak
+
+## Fase 1 — MVP Web (in corso)
+### Milestone A — Setup ✅
+- [x] Node.js, Git, Cursor installati
+- [x] Progetto Next.js creato
+- [x] File di contesto creati (CURSOR.md, DECISIONI.md, ROADMAP.md)
+
+### Milestone B — Core product
+- [ ] Account Supabase creato
+- [ ] Database schema definito (tabella utenti, profili, insight)
+- [ ] Autenticazione email funzionante
+- [ ] Onboarding form (data, ora, luogo di nascita)
+
+### Milestone C — AI + contenuti
+- [ ] Account AstrologyAPI.com creato
+- [ ] Calcolo tema natale funzionante
+- [ ] Anthropic API key configurata
+- [ ] Generazione insight giornaliero personalizzato
+- [ ] Cache insight nel database
+
+### Milestone D — Polish + lancio beta
+- [ ] Design raffinato (sfondo scuro, stile Co-Star)
+- [ ] PostHog analytics integrato
+- [ ] PWA configurata (installabile su telefono)
+- [ ] Beta chiusa con 20-50 persone
+
+### Milestone E — Iterazione post-beta
+- [ ] Primi A/B test (tono insight, orario notifica)
+- [ ] Feature compatibilità base
+- [ ] Lancio pubblico soft
+
+## Fase 2 — Lancio store (futuro)
+- [ ] Account developer Apple (99€/anno)
+- [ ] Account developer Google Play (25€)
+- [ ] Sviluppatore esterno per build nativa
+- [ ] Pipeline CI/CD automatica
+- [ ] Pubblicazione iOS + Android
+
+## Fase 3 — A regime (futuro)
+- [ ] Swiss Ephemeris self-hosted
+- [ ] Espansione mercato spagnolo
+- [ ] Partnership creator italiani
