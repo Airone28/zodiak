@@ -52,3 +52,11 @@
 - Disponibilità: 2-4 ore/settimana
 - Tool: Cursor + Claude
 - Flusso: apri CURSOR.md → incolla in chat Claude → descrivi obiettivo sessione
+
+## Credenziali e API keys
+
+### Supabase
+- Project URL: https://qbnabkkjryoqfeeukjqj.supabase.co
+- Publishable key: sb_publishable_... (vedi .env.local)
+- Secret key: (vedi .env.local — non salvare qui)
+- Database Password: (vedi .env.local — non salvare qui)

@@ -31,13 +31,14 @@ Posizionamento: serio e psicologico, non pop o ironico.
 ## Stato attuale
 - [x] Progetto Next.js creato
 - [x] File di contesto creati
-- [ ] Supabase configurato
+- [x] Codice su GitHub — github.com/Airone28/zodiak
+- [x] Deploy su Vercel — zodiak-rho.vercel.app
+- [x] Supabase configurato
 - [ ] Autenticazione utenti
 - [ ] Onboarding
 - [ ] Integrazione API astrologica
 - [ ] Integrazione Claude API
 - [ ] Insight giornaliero
-- [ ] Deploy su Vercel
 
 ## Come usare questo file
 All'inizio di ogni sessione di lavoro con Claude:

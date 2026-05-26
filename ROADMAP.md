@@ -5,9 +5,14 @@
 - [x] Node.js, Git, Cursor installati
 - [x] Progetto Next.js creato
 - [x] File di contesto creati (CURSOR.md, DECISIONI.md, ROADMAP.md)
+- [x] Codice su GitHub (github.com/Airone28/zodiak)
+- [x] Deploy su Vercel (zodiak-rho.vercel.app)
 
 ### Milestone B — Core product
-- [ ] Account Supabase creato
+- [x] Account Supabase creato
+- [x] Libreria Supabase installata
+- [x] File lib/supabase.ts creato
+- [x] Variabili ambiente configurate (.env.local)
 - [ ] Database schema definito (tabella utenti, profili, insight)
 - [ ] Autenticazione email funzionante
 - [ ] Onboarding form (data, ora, luogo di nascita)
