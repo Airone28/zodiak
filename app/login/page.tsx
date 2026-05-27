@@ -17,18 +17,28 @@ export default function Login() {
     setLoading(true)
     setErrore('')
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-
-    if (error) {
-      setErrore('Email o password non corretti.')
-      setLoading(false)
-      return
-    }
-
-    router.push('/home')
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+      
+      if (error) {
+        setErrore('Email o password non corretti.')
+        setLoading(false)
+        return
+      }
+      
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('id')
+        .eq('id', data.user.id)
+        .single()
+      
+      if (profile) {
+        router.push('/home')
+      } else {
+        router.push('/onboarding')
+      }
   }
 
   return (

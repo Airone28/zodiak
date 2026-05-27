@@ -15,8 +15,9 @@
 - [x] Variabili ambiente configurate (.env.local)
 - [x] Database schema definito (tabelle profiles e insights)
 - [x] Onboarding form completato
-- [ ] Autenticazione email funzionante
-- [ ] Collegamento onboarding al database
+- [x] Autenticazione email funzionante
+- [x] Primo utente registrato e verificato su Supabase
+- [ ] Collegamento onboarding al database verificato
 
 ### Milestone C — AI + contenuti
 - [ ] Account AstrologyAPI.com creato

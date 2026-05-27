@@ -1,14 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
 
 export default function Registrati() {
-  const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [errore, setErrore] = useState('')
+  const [successo, setSuccesso] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -18,9 +17,12 @@ export default function Registrati() {
     setErrore('')
 
     const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    })
+        email,
+        password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/login`,
+        },
+      })
 
     if (error) {
       setErrore(error.message)
@@ -28,7 +30,30 @@ export default function Registrati() {
       return
     }
 
-    router.push('/onboarding')
+    setSuccesso(true)
+    setLoading(false)
+  }
+
+  if (successo) {
+    return (
+      <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center px-6">
+        <div className="w-full max-w-sm text-center">
+          <p className="text-xs uppercase tracking-widest text-white/30 mb-6">Zodiak</p>
+          <div className="text-4xl mb-6">✉️</div>
+          <h1 className="text-2xl font-medium text-white/90 mb-4">Controlla la tua email</h1>
+          <p className="text-sm text-white/40 leading-relaxed mb-8">
+            Abbiamo inviato un link di conferma a <span className="text-white/70">{email}</span>. 
+            Clicca il link per attivare il tuo account e poi accedi.
+          </p>
+          <Link 
+            href="/login" 
+            className="inline-block w-full bg-white/10 border border-purple-400/40 rounded-xl py-4 text-purple-200 text-sm font-medium hover:bg-white/15 transition"
+          >
+            Vai al login →
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
