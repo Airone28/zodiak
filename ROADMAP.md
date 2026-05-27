@@ -13,7 +13,7 @@
 - [x] Libreria Supabase installata
 - [x] File lib/supabase.ts creato
 - [x] Variabili ambiente configurate (.env.local)
-- [ ] Database schema definito (tabella utenti, profili, insight)
+- [x] Database schema definito (tabelle profiles e insights)
 - [ ] Autenticazione email funzionante
 - [ ] Onboarding form (data, ora, luogo di nascita)
 
