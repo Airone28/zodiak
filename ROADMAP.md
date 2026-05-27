@@ -14,8 +14,9 @@
 - [x] File lib/supabase.ts creato
 - [x] Variabili ambiente configurate (.env.local)
 - [x] Database schema definito (tabelle profiles e insights)
+- [x] Onboarding form completato
 - [ ] Autenticazione email funzionante
-- [ ] Onboarding form (data, ora, luogo di nascita)
+- [ ] Collegamento onboarding al database
 
 ### Milestone C — AI + contenuti
 - [ ] Account AstrologyAPI.com creato
