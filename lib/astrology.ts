@@ -1,9 +1,14 @@
 const ASTROLOGY_API_BASE = 'https://json.astrologyapi.com/v1'
-const ASTROLOGY_API_TOKEN = process.env.ASTROLOGY_API_TOKEN!
 
-const headers = {
-  'Authorization': `Bearer ${ASTROLOGY_API_TOKEN}`,
-  'Content-Type': 'application/json',
+function getHeaders() {
+  const userId = process.env.ASTROLOGY_API_USER_ID
+  const password = process.env.ASTROLOGY_API_PASSWORD
+  const credentials = Buffer.from(`${userId}:${password}`).toString('base64')
+  
+  return {
+    'Authorization': `Basic ${credentials}`,
+    'Content-Type': 'application/json',
+  }
 }
 
 export async function getTemanatale(
@@ -29,7 +34,7 @@ export async function getTemanatale(
 
   const response = await fetch(`${ASTROLOGY_API_BASE}/planets`, {
     method: 'POST',
-    headers,
+    headers: getHeaders(),
     body: JSON.stringify(body),
   })
 
@@ -41,21 +46,18 @@ export async function getTemanatale(
 }
 
 export async function getTransitiOggi(
-  giorno: number,
-  mese: number,
-  anno: number,
-  ora: number,
-  minuti: number,
   latitudine: number,
   longitudine: number,
   fuso_orario: number = 1
 ) {
+  const oggi = new Date()
+  
   const body = {
-    day: giorno,
-    month: mese,
-    year: anno,
-    hour: ora,
-    min: minuti,
+    day: oggi.getDate(),
+    month: oggi.getMonth() + 1,
+    year: oggi.getFullYear(),
+    hour: oggi.getHours(),
+    min: oggi.getMinutes(),
     lat: latitudine,
     lon: longitudine,
     tzone: fuso_orario,
@@ -63,7 +65,7 @@ export async function getTransitiOggi(
 
   const response = await fetch(`${ASTROLOGY_API_BASE}/current_planets`, {
     method: 'POST',
-    headers,
+    headers: getHeaders(),
     body: JSON.stringify(body),
   })
 
