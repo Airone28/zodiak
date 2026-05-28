@@ -60,3 +60,7 @@
 - Publishable key: sb_publishable_... (vedi .env.local)
 - Secret key: (vedi .env.local — non salvare qui)
 - Database Password: (vedi .env.local — non salvare qui)
+
+### AstrologyAPI.com
+- Access Token: (vedi .env.local)
+- Piano: Trial ($2.00 crediti inclusi)

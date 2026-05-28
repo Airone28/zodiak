@@ -8,7 +8,7 @@
 - [x] Codice su GitHub (github.com/Airone28/zodiak)
 - [x] Deploy su Vercel (zodiak-rho.vercel.app)
 
-### Milestone B — Core product
+### Milestone B — Core product ✅
 - [x] Account Supabase creato
 - [x] Libreria Supabase installata
 - [x] File lib/supabase.ts creato
@@ -16,8 +16,9 @@
 - [x] Database schema definito (tabelle profiles e insights)
 - [x] Onboarding form completato
 - [x] Autenticazione email funzionante
-- [x] Primo utente registrato e verificato su Supabase
-- [ ] Collegamento onboarding al database verificato
+- [x] Login funzionante
+- [x] Flusso completo: registrazione → verifica email → login → onboarding → home
+- [x] Dati profilo salvati su Supabase verificati
 
 ### Milestone C — AI + contenuti
 - [ ] Account AstrologyAPI.com creato
