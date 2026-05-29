@@ -21,8 +21,8 @@
 - [x] Dati profilo salvati su Supabase verificati
 
 ### Milestone C — AI + contenuti
-- [ ] Account AstrologyAPI.com creato
-- [ ] Calcolo tema natale funzionante
+- [x] Account AstrologyAPI.com creato
+- [x] Calcolo tema natale funzionante e verificato
 - [ ] Anthropic API key configurata
 - [ ] Generazione insight giornaliero personalizzato
 - [ ] Cache insight nel database

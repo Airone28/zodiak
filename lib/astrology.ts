@@ -63,7 +63,7 @@ export async function getTransitiOggi(
     tzone: fuso_orario,
   }
 
-  const response = await fetch(`${ASTROLOGY_API_BASE}/current_planets`, {
+  const response = await fetch(`${ASTROLOGY_API_BASE}/planets/tropical`, {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify(body),
