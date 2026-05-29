@@ -23,9 +23,11 @@
 ### Milestone C — AI + contenuti
 - [x] Account AstrologyAPI.com creato
 - [x] Calcolo tema natale funzionante e verificato
-- [ ] Anthropic API key configurata
-- [ ] Generazione insight giornaliero personalizzato
+- [x] Anthropic API key configurata
+- [x] Generazione insight giornaliero personalizzato funzionante
+- [x] Primo insight reale generato e verificato
 - [ ] Cache insight nel database
+- [ ] Insight mostrato nella home
 
 ### Milestone D — Polish + lancio beta
 - [ ] Design raffinato (sfondo scuro, stile Co-Star)
