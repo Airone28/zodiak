@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { generaInsight } from '@/lib/insights'
 import { createClient } from '@supabase/supabase-js'
+import { getPostHogClient } from '@/lib/posthog-server'
 
 export async function GET(request: NextRequest) {
   try {
@@ -61,10 +62,24 @@ export async function GET(request: NextRequest) {
       testo,
     })
 
+    const posthog = getPostHogClient()
+    posthog.capture({
+      distinctId: user.id,
+      event: 'insight_generated',
+      properties: { luogo_nascita: profilo.luogo_nascita },
+    })
+
     return NextResponse.json({ insight: testo })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error)
     console.error('ERRORE GENERA INSIGHT:', error)
-    return NextResponse.json({ errore: error.message }, { status: 500 })
+    const posthog = getPostHogClient()
+    posthog.capture({
+      distinctId: 'server',
+      event: 'insight_generation_failed',
+      properties: { error: message },
+    })
+    return NextResponse.json({ errore: message }, { status: 500 })
   }
 }

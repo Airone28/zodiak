@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+import posthog from 'posthog-js'
 
 export default function Onboarding() {
   const router = useRouter()
@@ -41,6 +42,16 @@ export default function Onboarding() {
       setLoading(false)
       return
     }
+
+    posthog.identify(user.id, {
+      nome: form.nome,
+      data_nascita: form.data_nascita,
+      luogo_nascita: form.luogo_nascita,
+    })
+    posthog.capture('onboarding_completed', {
+      luogo_nascita: form.luogo_nascita,
+      ora_nascita_provided: !!form.ora_nascita,
+    })
     router.push('/home')
   }
 

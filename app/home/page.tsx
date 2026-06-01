@@ -2,24 +2,23 @@
 
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
+import posthog from 'posthog-js'
+
+const STELLE_DATA = Array.from({ length: 80 }, () => ({
+  width: Math.random() > 0.8 ? '2px' : '1px',
+  height: Math.random() > 0.8 ? '2px' : '1px',
+  top: `${Math.random() * 100}%`,
+  left: `${Math.random() * 100}%`,
+  opacity: Math.random() * 0.6 + 0.1,
+  animation: `pulse ${2 + Math.random() * 4}s ease-in-out infinite`,
+  animationDelay: `${Math.random() * 4}s`,
+}))
 
 function Stelle() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {Array.from({ length: 80 }).map((_, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full bg-white"
-          style={{
-            width: Math.random() > 0.8 ? '2px' : '1px',
-            height: Math.random() > 0.8 ? '2px' : '1px',
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            opacity: Math.random() * 0.6 + 0.1,
-            animation: `pulse ${2 + Math.random() * 4}s ease-in-out infinite`,
-            animationDelay: `${Math.random() * 4}s`,
-          }}
-        />
+      {STELLE_DATA.map((style, i) => (
+        <div key={i} className="absolute rounded-full bg-white" style={style} />
       ))}
     </div>
   )
@@ -54,7 +53,10 @@ export default function Home() {
       })
 
       const data = await response.json()
-      if (data.insight) setInsight(data.insight)
+      if (data.insight) {
+        setInsight(data.insight)
+        posthog.capture('insight_viewed', { nome: profilo?.nome })
+      }
       setLoading(false)
     }
 

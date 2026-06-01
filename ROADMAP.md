@@ -32,10 +32,10 @@
 - [x] Font premium installato (Cormorant Garamond + Inter)
 - [x] Home page ridisegnata con stelle animate
 - [x] App visibile su mobile via Vercel
+- [x] PWA configurata e installabile su iPhone
 - [ ] Design login e registrati raffinato
 - [ ] Fix campi input (diventano bianchi al click)
 - [ ] PostHog analytics integrato
-- [ ] PWA configurata (installabile su telefono)
 - [ ] Sistema feedback beta
 - [ ] Beta chiusa con 20-50 persone
 

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
+import posthog from 'posthog-js'
 
 export default function Registrati() {
   const [loading, setLoading] = useState(false)
@@ -30,6 +31,7 @@ export default function Registrati() {
       return
     }
 
+    posthog.capture('user_registered', { email })
     setSuccesso(true)
     setLoading(false)
   }
