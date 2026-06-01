@@ -101,8 +101,8 @@ export default function Home() {
                 <div className="h-2 bg-white/8 rounded-full animate-pulse w-4/6"></div>
               </div>
             ) : (
-              <p className="text-white/90 leading-[1.65]"
-              style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1rem' }}>
+              <p className="text-white/90 leading-[1.5]"
+              style={{ fontFamily: 'var(--font-cormorant)', fontSize: '0.95rem' }}>
              {insight}
            </p>
             )}
