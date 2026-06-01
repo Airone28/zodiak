@@ -20,19 +20,19 @@
 - [x] Flusso completo: registrazione → verifica email → login → onboarding → home
 - [x] Dati profilo salvati su Supabase verificati
 
-### Milestone C — AI + contenuti
+### Milestone C — AI + contenuti ✅
 - [x] Account AstrologyAPI.com creato
 - [x] Calcolo tema natale funzionante e verificato
 - [x] Anthropic API key configurata
 - [x] Generazione insight giornaliero personalizzato funzionante
-- [x] Primo insight reale generato e verificato
-- [ ] Cache insight nel database
-- [ ] Insight mostrato nella home
+- [x] Cache insight nel database
+- [x] Insight mostrato nella home
 
 ### Milestone D — Polish + lancio beta
 - [ ] Design raffinato (sfondo scuro, stile Co-Star)
 - [ ] PostHog analytics integrato
 - [ ] PWA configurata (installabile su telefono)
+- [ ] Sistema feedback beta (domanda fine onboarding)
 - [ ] Beta chiusa con 20-50 persone
 
 ### Milestone E — Iterazione post-beta
